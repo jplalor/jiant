@@ -4,6 +4,8 @@ Functions for parsing configs.
 import torch
 import logging as log
 
+from tasks import ALL_GLUE_TASKS, ALL_SUPERGLUE_TASKS
+
 
 def parse_task_list_arg(task_list):
     """Parse task list argument into a list of task names."""
