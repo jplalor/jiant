@@ -318,6 +318,11 @@ def evaluate_and_write(args, model, tasks, splits_to_write, cuda_device):
         evaluate.write_preds(
             tasks, te_preds, args.run_dir, "test", strict_glue_format=args.write_strict_glue_format
         )
+    if "train" in splits_to_write:
+        _, tr_preds = evaluate.evaluate(model, tasks, args.batch_size, cuda_device, "train") 
+        evaluate.write_preds(
+            tasks, tr_preds, args.run_dir, "train", strict_glue_format=args.write_strict_glue_format
+        )
 
     run_name = args.get("run_name", os.path.basename(args.run_dir))
     results_tsv = os.path.join(args.exp_dir, "results.tsv")
