@@ -204,14 +204,14 @@ def check_configurations(args, pretrain_tasks, target_tasks):
                     args.load_model
                     or args.load_target_train_checkpoint not in ["none", ""]
                     or args.allow_untrained_encoder_parameters
-                ), "Evaluating a target task model on tasks {} ".format(untrained_tasks)
-                "without training it on this run or loading a checkpoint. "
-                "Set `allow_untrained_encoder_parameters` if you really want to use "
-                "an untrained task model."
+                ), "Evaluating a target task model on tasks {} \
+                without training it on this run or loading a checkpoint. \
+                Set `allow_untrained_encoder_parameters` if you really want to use \
+                an untrained task model.".format(untrained_tasks)
                 log.warning(
-                    "Evauluating a target task model on tasks {} without training ".format(untrained_tasks)
-                    "it in this run. It's up to you to ensure that you are loading parameters "
-                    "that were sufficiently trained for this task."
+                    "Evauluating a target task model on tasks {} without training \
+                    it in this run. It's up to you to ensure that you are loading parameters \
+                    that were sufficiently trained for this task.".format(untrained_tasks)
                 )
         steps_log.write("Evaluating model on tasks: %s \n" % args.target_tasks)
 
