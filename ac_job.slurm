@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 #SBATCH --partition=titanx-long
-#SBATCH --gres=gpu:2 
+#SBATCH --gres=gpu:1 
+#SBATCH --mem=80000
 
 source activate jiant 
 source user_config.sh 
